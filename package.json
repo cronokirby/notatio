@@ -1,0 +1,29 @@
+{
+  "name": "notatio",
+  "version": "0.1.0",
+  "description": "A note taking system",
+  "main": "dist/index.js",
+  "bin": {
+    "notatio": "bin/notatio"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com/cronokirby/notatio.git"
+  },
+  "author": "Lúcás Meier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cronokirby/notatio/issues"
+  },
+  "homepage": "https://github.com/cronokirby/notatio#readme",
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.8",
+    "jest": "^24.9.0",
+    "typescript": "^3.7.5"
+  }
+}
