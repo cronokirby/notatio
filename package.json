@@ -21,9 +21,15 @@
   },
   "homepage": "https://github.com/cronokirby/notatio#readme",
   "devDependencies": {
+    "@types/command-line-args": "^5.0.0",
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.8",
+    "@types/yargs": "^15.0.0",
     "jest": "^24.9.0",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "yargs": "^15.1.0"
   }
 }
