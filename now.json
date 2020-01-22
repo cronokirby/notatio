@@ -1,4 +1,7 @@
 {
   "name": "notatio",
-  "scope": "cronokirby"
+  "scope": "cronokirby",
+  "env": {
+    "DB_URL": "@db-url"
+  }
 }

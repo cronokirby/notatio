@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import absoluteUrl from 'next-absolute-url';
 import Nav from '../components/Nav';
 
-function Document({ document }: { document: string }) {
+function ShowDocument({ document }: { document: string }) {
   return <div key={document}>{document}</div>;
 }
 
@@ -39,7 +39,7 @@ export default function Home({ documents }: Props) {
     documents.length === 0 ? (
       <NoSections />
     ) : (
-      documents.map(s => <Document document={s} />)
+      documents.map(s => <ShowDocument document={s} />)
     );
   return (
     <>
