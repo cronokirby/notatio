@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import absoluteUrl from 'next-absolute-url';
 import Nav from '../components/Nav';
 
 function Document({ document }: { document: string }) {
@@ -48,8 +49,9 @@ export default function Home({ documents }: Props) {
   );
 }
 
-Home.getInitialProps = async () => {
-  const res = await fetch('http://localhost:3000/api/documents');
+Home.getInitialProps = async (ctx) => {
+  const { origin } = absoluteUrl(ctx.req);
+  const res = await fetch(`${origin}/api/documents`);
   const json = await res.json();
   return { documents: json as string[] };
 };
