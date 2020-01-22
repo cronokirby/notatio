@@ -1,18 +1,29 @@
 {
   "compilerOptions": {
-    // The target we specify doesn't need to be very precise, but we want decent
-    // compatibility across different versions of Node; hence the older target.
     "target": "es5",
-    "module": "commonjs",
-    // We might as well use the latest and greatest browser library
-    "lib": ["dom", "es2018"],
-    "declaration": true,
-    "outDir": "dist",
-    "rootDir": "src",
-    "strict": true,
-    "types": ["jest"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "downlevelIteration": true
-  }
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx", "pages/_app.js"
+  ]
 }

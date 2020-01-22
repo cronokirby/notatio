@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "description": "A note taking system",
   "main": "dist/index.js",
-  "bin": {
-    "notatio": "bin/notatio"
-  },
   "scripts": {
-    "build": "tsc -p .",
-    "test": "jest"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -21,15 +19,24 @@
   },
   "homepage": "https://github.com/cronokirby/notatio#readme",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "@types/command-line-args": "^5.0.0",
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.8",
+    "@types/react": "^16.9.18",
     "@types/yargs": "^15.0.0",
+    "autoprefixer": "^9.7.4",
     "jest": "^24.9.0",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.1.4",
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "chalk": "^3.0.0",
+    "next": "^9.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "yargs": "^15.1.0"
   }
 }
