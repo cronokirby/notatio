@@ -1,3 +1,9 @@
+import Nav from '../components/Nav';
+
 export default function Home() {
-  return <h1 className="bg-red-400 font-bold font-sans">Hello World!</h1>;
+  return (
+    <>
+      <Nav /> <h1>Hello World</h1>
+    </>
+  );
 }
