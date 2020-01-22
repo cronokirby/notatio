@@ -49,7 +49,7 @@ export default function Home({ documents }: Props) {
 }
 
 Home.getInitialProps = async () => {
-  const res = await fetch('http://localhost:3000/api/sections');
+  const res = await fetch('http://localhost:3000/api/documents');
   const json = await res.json();
   return { documents: json as string[] };
 };
