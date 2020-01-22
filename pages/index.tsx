@@ -1,37 +1,49 @@
 import fetch from 'isomorphic-unfetch';
 import Nav from '../components/Nav';
 
-function Section({ section }: { section: string }) {
-  return <div key={section}>{section}</div>;
+function Document({ document }: { document: string }) {
+  return <div key={document}>{document}</div>;
 }
 
 function NoSections() {
   return (
-    <div className="w-1/2 mx-auto my-8 text-blue-800">
-      <h1 className="text-3xl font-bold">No Sections</h1>
-      <p className="my-2 text-lg">No sections have been created yet.</p>
-      <button className="px-4 py-1 mx-4 my-2 text-xl text-pink-100 bg-blue-400 rounded shadow-md hover:text-blue-400 hover:bg-blue-200">
-        Create
-      </button>
+    <div className="py-4 px-8 sm:w-2/3 md:w-1/2 mx-auto my-8 text-blue-800">
+      <h1 className="text-3xl font-bold">No Documents</h1>
+      <img
+        src="/education.png"
+        className="my-6 bg-blue-200 inset rounded-full shadow-inner"
+      ></img>
+      <p className="my-2 text-lg">No Documents have been created yet.</p>
+      <p className="my-2 text-lg">
+        Documents are the main way of organising notes with{' '}
+        <span className="font-bold">Notatio</span>. Documents are just markdown
+        files, and contain information along with questions you'd like to
+        revise.
+      </p>
+      <div className="my-4 flex justify-center">
+        <button className="px-4 py-1 mx-4 my-2 text-2xl text-pink-100 bg-blue-400 rounded shadow-md hover:text-blue-400 hover:bg-blue-200">
+          Create
+        </button>
+      </div>
     </div>
   );
 }
 
 interface Props {
-  readonly sections: string[];
+  readonly documents: string[];
 }
 
-export default function Home({ sections }: Props) {
-  const showSections =
-    sections.length === 0 ? (
+export default function Home({ documents }: Props) {
+  const showDocuments =
+    documents.length === 0 ? (
       <NoSections />
     ) : (
-      sections.map(s => <Section section={s} />)
+      documents.map(s => <Document document={s} />)
     );
   return (
     <>
       <Nav />
-      {showSections}
+      {showDocuments}
     </>
   );
 }
@@ -39,5 +51,5 @@ export default function Home({ sections }: Props) {
 Home.getInitialProps = async () => {
   const res = await fetch('http://localhost:3000/api/sections');
   const json = await res.json();
-  return { sections: json as string[] };
+  return { documents: json as string[] };
 };
