@@ -7,10 +7,10 @@ function Section({ section }: { section: string }) {
 
 function NoSections() {
   return (
-    <div className="w-1/2 mx-auto my-8 text-pink-800">
+    <div className="w-1/2 mx-auto my-8 text-blue-800">
       <h1 className="text-3xl font-bold">No Sections</h1>
       <p className="my-2 text-lg">No sections have been created yet.</p>
-      <button className="px-4 py-1 mx-4 my-2 text-xl text-pink-100 bg-pink-400 rounded shadow-md hover:text-pink-400 hover:bg-pink-200">
+      <button className="px-4 py-1 mx-4 my-2 text-xl text-pink-100 bg-blue-400 rounded shadow-md hover:text-blue-400 hover:bg-blue-200">
         Create
       </button>
     </div>

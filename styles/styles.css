@@ -5,7 +5,7 @@
 
 html, body {
   @apply font-sans;
-  @apply bg-yellow-100;
+  @apply bg-blue-100;
 }
 
 @tailwind utilities;
