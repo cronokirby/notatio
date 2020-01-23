@@ -1,8 +1,18 @@
 import fetch from 'isomorphic-unfetch';
 import absoluteUrl from 'next-absolute-url';
+import Router from 'next/router';
 import * as icons from '../components/icons';
 import Nav from '../components/Nav';
+import * as api from '../src/api';
 import { Document } from '../src/documents';
+
+/**
+ * Create a new document, and then redirect the user to that editing page.
+ */
+async function create() {
+  const id = await api.createDocument();
+  Router.push(`/edit/${id}`);
+}
 
 function ShowDocument({ document }: { document: Document }) {
   return (
@@ -45,7 +55,10 @@ function NoSections() {
         revise.
       </p>
       <div className="flex justify-center my-4">
-        <button className="px-4 py-1 mx-4 my-2 text-2xl text-pink-100 bg-blue-400 rounded shadow-md hover:text-blue-400 hover:bg-blue-200">
+        <button
+          className="px-4 py-1 mx-4 my-2 text-2xl text-pink-100 bg-blue-400 rounded shadow-md hover:text-blue-400 hover:bg-blue-200"
+          onClick={create}
+        >
           Create
         </button>
       </div>
@@ -65,7 +78,10 @@ export default function Home({ documents }: Props) {
     ) : (
       <div className="flex flex-wrap items-stretch mx-auto my-8 md:w-5/6 lg:w-1/2">
         <div className="px-4 my-2 text-blue-700 md:my-4 sm:w-1/2 md:w-1/3">
-          <button className="flex items-center justify-center w-full h-full px-4 py-2 text-white bg-blue-300 rounded shadow-inner fill-current hover:text-blue-400 hover:bg-blue-200">
+          <button
+            className="flex items-center justify-center w-full h-full px-4 py-2 text-white bg-blue-300 rounded shadow-inner fill-current hover:text-blue-400 hover:bg-blue-200"
+            onClick={create}
+          >
             {icons.AddBox(48)}
             <span className="mx-2 text-2xl">Create</span>
           </button>
