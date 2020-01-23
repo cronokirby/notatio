@@ -14,31 +14,31 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .status(200)
       .json([
         {
-          _id: 'foo',
+          id: 'foo',
           title: 'General Physics, Electromagnetism',
           tags: ['Physics'],
           body: 'Here is some text',
         },
         {
-          _id: 'bar',
+          id: 'bar',
           title: 'Computer Networks',
           tags: ['CS'],
           body: 'Here is some text',
         },
         {
-          _id: '2',
+          id: '2',
           title: 'TSSO',
           tags: ['CS', 'Politics'],
           body: 'Here is some text',
         },
         {
-          _id: '4',
+          id: '4',
           title: 'The best course ever',
           tags: ['CS', 'Politics'],
           body: 'Here is some text',
         },
         {
-          _id: '5',
+          id: '5',
           title: 'An even better course',
           tags: ['CS', 'Politics'],
           body: 'Here is some text',
