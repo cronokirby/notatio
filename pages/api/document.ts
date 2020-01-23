@@ -38,7 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           body: 'Here is some text',
         },
         {
-          _id: '4',
+          _id: '5',
           title: 'An even better course',
           tags: ['CS', 'Politics'],
           body: 'Here is some text',
